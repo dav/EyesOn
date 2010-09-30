@@ -8,6 +8,7 @@
 
 #import "EyesOnAppDelegate.h"
 
+#import "EOTabBarController.h"
 
 @implementation EyesOnAppDelegate
 
@@ -20,9 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
   
-  // Override point for customization after application launch.
-  
-  // Add the tab bar controller's view to the window and display.
+  tabBarController = [[EOTabBarController alloc] init];
   [window addSubview:tabBarController.view];
   [window makeKeyAndVisible];
   

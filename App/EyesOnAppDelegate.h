@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class EOTabBarController;
+
 @interface EyesOnAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
-  UIWindow *window;
-  UITabBarController *tabBarController;
+  UIWindow* window;
+  EOTabBarController* tabBarController;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) IBOutlet UIWindow* window;
+@property (nonatomic, retain) IBOutlet EOTabBarController* tabBarController;
 
 @end
