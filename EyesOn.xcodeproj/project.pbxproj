@@ -18,11 +18,10 @@
 		57A69BDC125542C600247BD8 /* EOTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A69BC212553FF700247BD8 /* EOTabBarController.m */; };
 		57A69BF01255436900247BD8 /* 13-target.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A69BEF1255436900247BD8 /* 13-target.png */; };
 		57A69BF2125543CA00247BD8 /* 44-shoebox.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A69BF1125543CA00247BD8 /* 44-shoebox.png */; };
+		57A69C2E12554B2300247BD8 /* TargetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A69C2C12554B2300247BD8 /* TargetDetailViewController.m */; };
+		57A69C2F12554B2300247BD8 /* TargetDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A69C2D12554B2300247BD8 /* TargetDetailViewController.xib */; };
 		57D1255F1254D7C600273827 /* EyesOnAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1255E1254D7C600273827 /* EyesOnAppDelegate.m */; };
-		57D125831254D90F00273827 /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D1257E1254D90F00273827 /* FirstView.xib */; };
-		57D125841254D90F00273827 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D125801254D90F00273827 /* FirstViewController.m */; };
 		57D125851254D90F00273827 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D125811254D90F00273827 /* MainWindow.xib */; };
-		57D125861254D90F00273827 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D125821254D90F00273827 /* SecondView.xib */; };
 		57D125901254D9AE00273827 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1258F1254D9AE00273827 /* main.m */; };
 		57D125A31254DA2B00273827 /* EyesOn_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 57D125A11254DA2B00273827 /* EyesOn_Icon.png */; };
 		57D125A41254DA2B00273827 /* EyesOn_Icon.psd in Resources */ = {isa = PBXBuildFile; fileRef = 57D125A21254DA2B00273827 /* EyesOn_Icon.psd */; };
@@ -68,15 +67,14 @@
 		57A69BC212553FF700247BD8 /* EOTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EOTabBarController.m; sourceTree = "<group>"; };
 		57A69BEF1255436900247BD8 /* 13-target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13-target.png"; sourceTree = "<group>"; };
 		57A69BF1125543CA00247BD8 /* 44-shoebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "44-shoebox.png"; sourceTree = "<group>"; };
+		57A69C2B12554B2300247BD8 /* TargetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetDetailViewController.h; sourceTree = "<group>"; };
+		57A69C2C12554B2300247BD8 /* TargetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetDetailViewController.m; sourceTree = "<group>"; };
+		57A69C2D12554B2300247BD8 /* TargetDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TargetDetailViewController.xib; sourceTree = "<group>"; };
 		57D124F61254D3D400273827 /* EyesOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyesOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D124F81254D3D400273827 /* EyesOn-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EyesOn-Info.plist"; sourceTree = "<group>"; };
 		57D1255D1254D7C600273827 /* EyesOnAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyesOnAppDelegate.h; sourceTree = "<group>"; };
 		57D1255E1254D7C600273827 /* EyesOnAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EyesOnAppDelegate.m; sourceTree = "<group>"; };
-		57D1257E1254D90F00273827 /* FirstView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstView.xib; sourceTree = "<group>"; };
-		57D1257F1254D90F00273827 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		57D125801254D90F00273827 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		57D125811254D90F00273827 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		57D125821254D90F00273827 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
 		57D1258F1254D9AE00273827 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57D125A11254DA2B00273827 /* EyesOn_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EyesOn_Icon.png; sourceTree = "<group>"; };
 		57D125A21254DA2B00273827 /* EyesOn_Icon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = EyesOn_Icon.psd; sourceTree = "<group>"; };
@@ -258,16 +256,15 @@
 		AE42798111EFB3DC00CFF331 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				57D1257E1254D90F00273827 /* FirstView.xib */,
-				57D1257F1254D90F00273827 /* FirstViewController.h */,
-				57D125801254D90F00273827 /* FirstViewController.m */,
 				57D125811254D90F00273827 /* MainWindow.xib */,
-				57D125821254D90F00273827 /* SecondView.xib */,
 				57A69B9112553C3100247BD8 /* TargetsViewController.h */,
 				57A69B9212553C3100247BD8 /* TargetsViewController.m */,
 				57A69B9312553C3100247BD8 /* TargetsViewController.xib */,
 				57A69BC112553FF700247BD8 /* EOTabBarController.h */,
 				57A69BC212553FF700247BD8 /* EOTabBarController.m */,
+				57A69C2B12554B2300247BD8 /* TargetDetailViewController.h */,
+				57A69C2C12554B2300247BD8 /* TargetDetailViewController.m */,
+				57A69C2D12554B2300247BD8 /* TargetDetailViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,14 +371,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57D125831254D90F00273827 /* FirstView.xib in Resources */,
 				57D125851254D90F00273827 /* MainWindow.xib in Resources */,
-				57D125861254D90F00273827 /* SecondView.xib in Resources */,
 				57D125A31254DA2B00273827 /* EyesOn_Icon.png in Resources */,
 				57D125A41254DA2B00273827 /* EyesOn_Icon.psd in Resources */,
 				57A69B9512553C3100247BD8 /* TargetsViewController.xib in Resources */,
 				57A69BF01255436900247BD8 /* 13-target.png in Resources */,
 				57A69BF2125543CA00247BD8 /* 44-shoebox.png in Resources */,
+				57A69C2F12554B2300247BD8 /* TargetDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,11 +397,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D1255F1254D7C600273827 /* EyesOnAppDelegate.m in Sources */,
-				57D125841254D90F00273827 /* FirstViewController.m in Sources */,
 				57D125901254D9AE00273827 /* main.m in Sources */,
 				57A69B731255387900247BD8 /* Target.m in Sources */,
 				57A69B9412553C3100247BD8 /* TargetsViewController.m in Sources */,
 				57A69BDC125542C600247BD8 /* EOTabBarController.m in Sources */,
+				57A69C2E12554B2300247BD8 /* TargetDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

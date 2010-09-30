@@ -7,7 +7,9 @@
 //
 
 #import "TargetsViewController.h"
+
 #import "Target.h"
+#import "TargetDetailViewController.h"
 
 @interface TargetsViewController (PrivateMethods)
 - (NSArray*) targets;
@@ -110,13 +112,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   Target* target = [[self targets] objectAtIndex:indexPath.row];
   NSLog(@"Selected: %@", target);
-	/*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+	TargetDetailViewController *detailViewController = [[TargetDetailViewController alloc] initWithNibName:@"TargetDetailViewController" bundle:nil];
+  detailViewController.target = target;
+  [self.navigationController pushViewController:detailViewController animated:YES];
+  [detailViewController release];
 }
 
 
