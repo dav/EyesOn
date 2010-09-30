@@ -17,4 +17,4 @@ Then, from either a web site or within the app, you can browse everyone's photos
 
 ## Detailed Roadmap 
 
-See http://www.pivotaltracker.com/projects/123645
+See the [Eyes On Pivotal Tracker Project](http://www.pivotaltracker.com/projects/123645)
