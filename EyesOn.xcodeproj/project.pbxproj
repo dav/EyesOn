@@ -1,0 +1,627 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57D1255F1254D7C600273827 /* EyesOnAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1255E1254D7C600273827 /* EyesOnAppDelegate.m */; };
+		57D125831254D90F00273827 /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D1257E1254D90F00273827 /* FirstView.xib */; };
+		57D125841254D90F00273827 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D125801254D90F00273827 /* FirstViewController.m */; };
+		57D125851254D90F00273827 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D125811254D90F00273827 /* MainWindow.xib */; };
+		57D125861254D90F00273827 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D125821254D90F00273827 /* SecondView.xib */; };
+		57D125901254D9AE00273827 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1258F1254D9AE00273827 /* main.m */; };
+		57D125A31254DA2B00273827 /* EyesOn_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 57D125A11254DA2B00273827 /* EyesOn_Icon.png */; };
+		57D125A41254DA2B00273827 /* EyesOn_Icon.psd in Resources */ = {isa = PBXBuildFile; fileRef = 57D125A21254DA2B00273827 /* EyesOn_Icon.psd */; };
+		AE26662B11EFB89800EE18BD /* MyModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE26662A11EFB89800EE18BD /* MyModelSpec.m */; };
+		AE26663311EFB93400EE18BD /* MyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE26663211EFB93400EE18BD /* MyModel.m */; };
+		AE26667711EFBAB100EE18BD /* Cedar-iPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE42792411EF992A00CFF331 /* Cedar-iPhone.framework */; };
+		AE26667811EFBAB100EE18BD /* OCHamcrest-iPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE42794311EF997500CFF331 /* OCHamcrest-iPhone.framework */; };
+		AE26669011EFBBA500EE18BD /* MyViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE26668F11EFBBA500EE18BD /* MyViewSpec.m */; };
+		AE2667B211EFC2B000EE18BD /* OCMock-iPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2667B111EFC2B000EE18BD /* OCMock-iPhone.framework */; };
+		AE4277B711EF91AD00CFF331 /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4277B611EF91AD00CFF331 /* OCHamcrest.framework */; };
+		AE4277F911EF91FB00CFF331 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4277F811EF91FB00CFF331 /* OCMock.framework */; };
+		AE42780311EF921B00CFF331 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE42778911EF8FD600CFF331 /* Cedar.framework */; };
+		AE42781011EF929700CFF331 /* Cedar.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE42778911EF8FD600CFF331 /* Cedar.framework */; };
+		AE42781111EF929700CFF331 /* OCHamcrest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE4277B611EF91AD00CFF331 /* OCHamcrest.framework */; };
+		AE42781211EF929700CFF331 /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE4277F811EF91FB00CFF331 /* OCMock.framework */; };
+		AE4279F511EFB7A000CFF331 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4279F411EFB7A000CFF331 /* main.m */; };
+		AE427A0711EFB82600CFF331 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE427A0611EFB82600CFF331 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AE42781311EF92B600CFF331 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AE42781011EF929700CFF331 /* Cedar.framework in CopyFiles */,
+				AE42781111EF929700CFF331 /* OCHamcrest.framework in CopyFiles */,
+				AE42781211EF929700CFF331 /* OCMock.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32A70AAB03705E1F00C91783 /* EyesOn_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyesOn_Prefix.pch; sourceTree = "<group>"; };
+		57D124F61254D3D400273827 /* EyesOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyesOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57D124F81254D3D400273827 /* EyesOn-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EyesOn-Info.plist"; sourceTree = "<group>"; };
+		57D1255D1254D7C600273827 /* EyesOnAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyesOnAppDelegate.h; sourceTree = "<group>"; };
+		57D1255E1254D7C600273827 /* EyesOnAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EyesOnAppDelegate.m; sourceTree = "<group>"; };
+		57D1257E1254D90F00273827 /* FirstView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstView.xib; sourceTree = "<group>"; };
+		57D1257F1254D90F00273827 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		57D125801254D90F00273827 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		57D125811254D90F00273827 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		57D125821254D90F00273827 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
+		57D1258F1254D9AE00273827 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		57D125A11254DA2B00273827 /* EyesOn_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EyesOn_Icon.png; sourceTree = "<group>"; };
+		57D125A21254DA2B00273827 /* EyesOn_Icon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = EyesOn_Icon.psd; sourceTree = "<group>"; };
+		AE26662A11EFB89800EE18BD /* MyModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModelSpec.m; sourceTree = "<group>"; };
+		AE26663111EFB93400EE18BD /* MyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModel.h; sourceTree = "<group>"; };
+		AE26663211EFB93400EE18BD /* MyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModel.m; sourceTree = "<group>"; };
+		AE26668F11EFBBA500EE18BD /* MyViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewSpec.m; sourceTree = "<group>"; };
+		AE2667B111EFC2B000EE18BD /* OCMock-iPhone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "OCMock-iPhone.framework"; sourceTree = "<group>"; };
+		AE42778911EF8FD600CFF331 /* Cedar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cedar.framework; sourceTree = "<group>"; };
+		AE4277AC11EF914F00CFF331 /* Specs */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = Specs; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4277B611EF91AD00CFF331 /* OCHamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrest.framework; sourceTree = "<group>"; };
+		AE4277F811EF91FB00CFF331 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
+		AE42792411EF992A00CFF331 /* Cedar-iPhone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "Cedar-iPhone.framework"; sourceTree = "<group>"; };
+		AE42794311EF997500CFF331 /* OCHamcrest-iPhone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "OCHamcrest-iPhone.framework"; sourceTree = "<group>"; };
+		AE4279BA11EFB64F00CFF331 /* UISpecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISpecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4279BC11EFB65000CFF331 /* UISpecs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UISpecs-Info.plist"; sourceTree = "<group>"; };
+		AE4279F411EFB7A000CFF331 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AE427A0611EFB82600CFF331 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57D124F41254D3D400273827 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4277AA11EF914F00CFF331 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE42780311EF921B00CFF331 /* Cedar.framework in Frameworks */,
+				AE4277B711EF91AD00CFF331 /* OCHamcrest.framework in Frameworks */,
+				AE4277F911EF91FB00CFF331 /* OCMock.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4279B811EFB64F00CFF331 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE26667711EFBAB100EE18BD /* Cedar-iPhone.framework in Frameworks */,
+				AE26667811EFBAB100EE18BD /* OCHamcrest-iPhone.framework in Frameworks */,
+				AE2667B211EFC2B000EE18BD /* OCMock-iPhone.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* EyesOn */ = {
+			isa = PBXGroup;
+			children = (
+				AE42775B11EF8C6700CFF331 /* App */,
+				AE42775E11EF8C6B00CFF331 /* Spec */,
+				57D1259E1254DA0400273827 /* Resources */,
+				AE42778811EF8FD600CFF331 /* Externals */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+				AE4279BC11EFB65000CFF331 /* UISpecs-Info.plist */,
+				57D124F81254D3D400273827 /* EyesOn-Info.plist */,
+			);
+			name = EyesOn;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE4277AC11EF914F00CFF331 /* Specs */,
+				AE4279BA11EFB64F00CFF331 /* UISpecs.app */,
+				57D124F61254D3D400273827 /* EyesOn.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57D1259E1254DA0400273827 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				57D125A01254DA2B00273827 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		57D125A01254DA2B00273827 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				57D125A11254DA2B00273827 /* EyesOn_Icon.png */,
+				57D125A21254DA2B00273827 /* EyesOn_Icon.psd */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		AE26662C11EFB8B900EE18BD /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AE26662D11EFB8F900EE18BD /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AE26662D11EFB8F900EE18BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AE26663111EFB93400EE18BD /* MyModel.h */,
+				AE26663211EFB93400EE18BD /* MyModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AE42775B11EF8C6700CFF331 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				57D1258F1254D9AE00273827 /* main.m */,
+				AE26662C11EFB8B900EE18BD /* Domain */,
+				AE42797811EFB31C00CFF331 /* UI */,
+				32A70AAB03705E1F00C91783 /* EyesOn_Prefix.pch */,
+				57D1255D1254D7C600273827 /* EyesOnAppDelegate.h */,
+				57D1255E1254D7C600273827 /* EyesOnAppDelegate.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AE42775E11EF8C6B00CFF331 /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				AE4279F211EFB70300CFF331 /* Domain */,
+				AE42797411EFB1D500CFF331 /* UI */,
+			);
+			path = Spec;
+			sourceTree = "<group>";
+		};
+		AE42778811EF8FD600CFF331 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				AE2667B111EFC2B000EE18BD /* OCMock-iPhone.framework */,
+				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
+				AE42778911EF8FD600CFF331 /* Cedar.framework */,
+				AE4277B611EF91AD00CFF331 /* OCHamcrest.framework */,
+				AE4277F811EF91FB00CFF331 /* OCMock.framework */,
+				AE42792411EF992A00CFF331 /* Cedar-iPhone.framework */,
+				AE42794311EF997500CFF331 /* OCHamcrest-iPhone.framework */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		AE42797411EFB1D500CFF331 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AE42797711EFB2FD00CFF331 /* Views */,
+				AE4279F411EFB7A000CFF331 /* main.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AE42797711EFB2FD00CFF331 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AE26668F11EFBBA500EE18BD /* MyViewSpec.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AE42797811EFB31C00CFF331 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AE42798111EFB3DC00CFF331 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AE42798111EFB3DC00CFF331 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57D1257E1254D90F00273827 /* FirstView.xib */,
+				57D1257F1254D90F00273827 /* FirstViewController.h */,
+				57D125801254D90F00273827 /* FirstViewController.m */,
+				57D125811254D90F00273827 /* MainWindow.xib */,
+				57D125821254D90F00273827 /* SecondView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AE4279F211EFB70300CFF331 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AE4279F311EFB72E00CFF331 /* Models */,
+				AE427A0611EFB82600CFF331 /* main.m */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AE4279F311EFB72E00CFF331 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AE26662A11EFB89800EE18BD /* MyModelSpec.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57D124F51254D3D400273827 /* EyesOn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57D124FB1254D3D500273827 /* Build configuration list for PBXNativeTarget "EyesOn" */;
+			buildPhases = (
+				57D124F21254D3D400273827 /* Resources */,
+				57D124F31254D3D400273827 /* Sources */,
+				57D124F41254D3D400273827 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EyesOn;
+			productName = EyesOn;
+			productReference = 57D124F61254D3D400273827 /* EyesOn.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AE4277AB11EF914F00CFF331 /* Specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE4277B511EF918900CFF331 /* Build configuration list for PBXNativeTarget "Specs" */;
+			buildPhases = (
+				AE4277A911EF914F00CFF331 /* Sources */,
+				AE4277AA11EF914F00CFF331 /* Frameworks */,
+				AE42781311EF92B600CFF331 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Specs;
+			productName = Specs;
+			productReference = AE4277AC11EF914F00CFF331 /* Specs */;
+			productType = "com.apple.product-type.tool";
+		};
+		AE4279B911EFB64F00CFF331 /* UISpecs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE4279BF11EFB65000CFF331 /* Build configuration list for PBXNativeTarget "UISpecs" */;
+			buildPhases = (
+				AE4279B611EFB64F00CFF331 /* Resources */,
+				AE4279B711EFB64F00CFF331 /* Sources */,
+				AE4279B811EFB64F00CFF331 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UISpecs;
+			productName = UISpecs;
+			productReference = AE4279BA11EFB64F00CFF331 /* UISpecs.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "EyesOn" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* EyesOn */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE4277AB11EF914F00CFF331 /* Specs */,
+				AE4279B911EFB64F00CFF331 /* UISpecs */,
+				57D124F51254D3D400273827 /* EyesOn */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57D124F21254D3D400273827 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57D125831254D90F00273827 /* FirstView.xib in Resources */,
+				57D125851254D90F00273827 /* MainWindow.xib in Resources */,
+				57D125861254D90F00273827 /* SecondView.xib in Resources */,
+				57D125A31254DA2B00273827 /* EyesOn_Icon.png in Resources */,
+				57D125A41254DA2B00273827 /* EyesOn_Icon.psd in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4279B611EFB64F00CFF331 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57D124F31254D3D400273827 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57D1255F1254D7C600273827 /* EyesOnAppDelegate.m in Sources */,
+				57D125841254D90F00273827 /* FirstViewController.m in Sources */,
+				57D125901254D9AE00273827 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4277A911EF914F00CFF331 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE427A0711EFB82600CFF331 /* main.m in Sources */,
+				AE26662B11EFB89800EE18BD /* MyModelSpec.m in Sources */,
+				AE26663311EFB93400EE18BD /* MyModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4279B711EFB64F00CFF331 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE4279F511EFB7A000CFF331 /* main.m in Sources */,
+				AE26669011EFBBA500EE18BD /* MyViewSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB927908733DD40010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB927A08733DD40010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		57D124F91254D3D500273827 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "EyesOn-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = EyesOn;
+				SDKROOT = iphoneos4.1;
+			};
+			name = Debug;
+		};
+		57D124FA1254D3D500273827 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "EyesOn-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = EyesOn;
+				SDKROOT = iphoneos4.1;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		AE4277AE11EF914F00CFF331 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Specs;
+			};
+			name = Debug;
+		};
+		AE4277AF11EF914F00CFF331 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Specs;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		AE4279BD11EFB65000CFF331 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "UISpecs-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lstdc++",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UISpecs;
+				SDKROOT = iphonesimulator4.0;
+			};
+			name = Debug;
+		};
+		AE4279BE11EFB65000CFF331 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "UISpecs-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lstdc++",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UISpecs;
+				SDKROOT = iphonesimulator4.0;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "EyesOn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB927908733DD40010E9CD /* Debug */,
+				1DEB927A08733DD40010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57D124FB1254D3D500273827 /* Build configuration list for PBXNativeTarget "EyesOn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57D124F91254D3D500273827 /* Debug */,
+				57D124FA1254D3D500273827 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE4277B511EF918900CFF331 /* Build configuration list for PBXNativeTarget "Specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE4277AE11EF914F00CFF331 /* Debug */,
+				AE4277AF11EF914F00CFF331 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE4279BF11EFB65000CFF331 /* Build configuration list for PBXNativeTarget "UISpecs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE4279BD11EFB65000CFF331 /* Debug */,
+				AE4279BE11EFB65000CFF331 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
