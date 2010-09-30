@@ -15,4 +15,8 @@
 @synthesize latitude = _latitude;
 @synthesize longitude = _longitude;
 
+- (NSString*) description {
+  return [NSString stringWithFormat:@"Target:%@ @ <%@,%@>", self.name, self.latitude, self.longitude];
+}
+
 @end
