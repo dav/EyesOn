@@ -20,6 +20,11 @@
 		57A69BF2125543CA00247BD8 /* 44-shoebox.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A69BF1125543CA00247BD8 /* 44-shoebox.png */; };
 		57A69C2E12554B2300247BD8 /* TargetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A69C2C12554B2300247BD8 /* TargetDetailViewController.m */; };
 		57A69C2F12554B2300247BD8 /* TargetDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A69C2D12554B2300247BD8 /* TargetDetailViewController.xib */; };
+		57A69C751255539600247BD8 /* OverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A69C741255539600247BD8 /* OverlayViewController.m */; };
+		57A69D55125556F000247BD8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A69D54125556F000247BD8 /* AudioToolbox.framework */; };
+		57A69D57125556F000247BD8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A69D56125556F000247BD8 /* CoreGraphics.framework */; };
+		57A69DB01255599E00247BD8 /* tick.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 57A69DAF1255599E00247BD8 /* tick.aiff */; };
+		57A69E0012555EA400247BD8 /* OverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A69DFF12555EA400247BD8 /* OverlayViewController.xib */; };
 		57D1255F1254D7C600273827 /* EyesOnAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1255E1254D7C600273827 /* EyesOnAppDelegate.m */; };
 		57D125851254D90F00273827 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D125811254D90F00273827 /* MainWindow.xib */; };
 		57D125901254D9AE00273827 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1258F1254D9AE00273827 /* main.m */; };
@@ -70,6 +75,12 @@
 		57A69C2B12554B2300247BD8 /* TargetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetDetailViewController.h; sourceTree = "<group>"; };
 		57A69C2C12554B2300247BD8 /* TargetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetDetailViewController.m; sourceTree = "<group>"; };
 		57A69C2D12554B2300247BD8 /* TargetDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TargetDetailViewController.xib; sourceTree = "<group>"; };
+		57A69C731255539600247BD8 /* OverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayViewController.h; sourceTree = "<group>"; };
+		57A69C741255539600247BD8 /* OverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayViewController.m; sourceTree = "<group>"; };
+		57A69D54125556F000247BD8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		57A69D56125556F000247BD8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		57A69DAF1255599E00247BD8 /* tick.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = tick.aiff; sourceTree = "<group>"; };
+		57A69DFF12555EA400247BD8 /* OverlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayViewController.xib; sourceTree = "<group>"; };
 		57D124F61254D3D400273827 /* EyesOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyesOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D124F81254D3D400273827 /* EyesOn-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EyesOn-Info.plist"; sourceTree = "<group>"; };
 		57D1255D1254D7C600273827 /* EyesOnAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyesOnAppDelegate.h; sourceTree = "<group>"; };
@@ -98,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A69D55125556F000247BD8 /* AudioToolbox.framework in Frameworks */,
+				57A69D57125556F000247BD8 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,9 +170,18 @@
 			path = TabBarIcons;
 			sourceTree = "<group>";
 		};
+		57A69DAA1255597D00247BD8 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				57A69DAF1255599E00247BD8 /* tick.aiff */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		57D1259E1254DA0400273827 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				57A69DAA1255597D00247BD8 /* Sounds */,
 				57D125A01254DA2B00273827 /* Images */,
 			);
 			name = Resources;
@@ -217,8 +239,10 @@
 		AE42778811EF8FD600CFF331 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
-				AE2667B111EFC2B000EE18BD /* OCMock-iPhone.framework */,
+				57A69D54125556F000247BD8 /* AudioToolbox.framework */,
+				57A69D56125556F000247BD8 /* CoreGraphics.framework */,
 				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
+				AE2667B111EFC2B000EE18BD /* OCMock-iPhone.framework */,
 				AE42778911EF8FD600CFF331 /* Cedar.framework */,
 				AE4277B611EF91AD00CFF331 /* OCHamcrest.framework */,
 				AE4277F811EF91FB00CFF331 /* OCMock.framework */,
@@ -262,6 +286,9 @@
 				57A69B9312553C3100247BD8 /* TargetsViewController.xib */,
 				57A69BC112553FF700247BD8 /* EOTabBarController.h */,
 				57A69BC212553FF700247BD8 /* EOTabBarController.m */,
+				57A69C731255539600247BD8 /* OverlayViewController.h */,
+				57A69C741255539600247BD8 /* OverlayViewController.m */,
+				57A69DFF12555EA400247BD8 /* OverlayViewController.xib */,
 				57A69C2B12554B2300247BD8 /* TargetDetailViewController.h */,
 				57A69C2C12554B2300247BD8 /* TargetDetailViewController.m */,
 				57A69C2D12554B2300247BD8 /* TargetDetailViewController.xib */,
@@ -354,6 +381,7 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 08FB7794FE84155DC02AAC07 /* EyesOn */;
 			projectDirPath = "";
@@ -378,6 +406,8 @@
 				57A69BF01255436900247BD8 /* 13-target.png in Resources */,
 				57A69BF2125543CA00247BD8 /* 44-shoebox.png in Resources */,
 				57A69C2F12554B2300247BD8 /* TargetDetailViewController.xib in Resources */,
+				57A69DB01255599E00247BD8 /* tick.aiff in Resources */,
+				57A69E0012555EA400247BD8 /* OverlayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +432,7 @@
 				57A69B9412553C3100247BD8 /* TargetsViewController.m in Sources */,
 				57A69BDC125542C600247BD8 /* EOTabBarController.m in Sources */,
 				57A69C2E12554B2300247BD8 /* TargetDetailViewController.m in Sources */,
+				57A69C751255539600247BD8 /* OverlayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,7 +471,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
 		};
@@ -452,7 +483,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Release;
 		};

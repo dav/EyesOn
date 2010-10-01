@@ -7,15 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OverlayViewController.h"
 
 @class Target;
 
-@interface TargetDetailViewController : UIViewController {
+@interface TargetDetailViewController : UIViewController <OverlayViewControllerDelegate> {
   IBOutlet UIButton* cameraButton;
+  
   Target* _target;
+  OverlayViewController* _overlayViewController;
 }
 
 @property (nonatomic, retain) Target* target;
+@property (nonatomic, retain) OverlayViewController* overlayViewController;
 
 - (IBAction) cameraButtonTapped:(id)sender;
 

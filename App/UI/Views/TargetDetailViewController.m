@@ -8,15 +8,20 @@
 
 #import "TargetDetailViewController.h"
 #import "Target.h"
+#import "OverlayViewController.h"
 
 @implementation TargetDetailViewController
 
 @synthesize target = _target;
+@synthesize overlayViewController = _overlayViewController;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   if (self.target) self.title = self.target.name;
   [cameraButton setTitle:@"Take a photo" forState:UIControlStateNormal];
+  
+  self.overlayViewController = [[[OverlayViewController alloc] initWithNibName:@"OverlayViewController" bundle:nil] autorelease];
+  self.overlayViewController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,19 +30,34 @@
 }
 
 - (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+  self.overlayViewController = nil;
+  [super viewDidUnload];
 }
 
 
 - (void)dealloc {
-    [super dealloc];
+  [_overlayViewController release];
+  [super dealloc];
 }
 
 #pragma mark -
 
 - (IBAction) cameraButtonTapped:(id)sender {
+  NSLog(@"tapped");
+  [self.overlayViewController setupImagePicker];
+  [self presentModalViewController:self.overlayViewController.imagePickerController animated:YES];
 }
+
+#pragma mark -
+#pragma mark OverlayViewControllerDelegate
+
+- (void)didTakePicture:(UIImage *)picture {
+  NSLog(@"picture; %@", picture);
+}
+
+- (void)didFinishWithCamera {
+  [self dismissModalViewControllerAnimated:YES];
+}
+
 
 @end
