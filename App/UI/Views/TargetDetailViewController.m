@@ -58,6 +58,7 @@
 
 - (void)didTakePicture:(UIImage *)picture {
   NSLog(@"picture; %@", picture);
+  mainImageView.image = picture;
   
   if (_locationManager == nil) {
     _locationManager = [[[CLLocationManager alloc] init] retain];
@@ -91,7 +92,10 @@
     NSNumber* hAcc = [NSNumber numberWithDouble:newLocation.horizontalAccuracy];
     NSNumber* vAcc = [NSNumber numberWithDouble:newLocation.verticalAccuracy];
     NSNumber* altitude = [NSNumber numberWithDouble:newLocation.altitude];
-    NSLog(@"lat: %@, lon: %@ (acrcy h:%@ v:%@; altitude: %@)", latitude, longitude, hAcc, vAcc, altitude);
+    NSString* details = [NSString stringWithFormat:@"lat: %@\nlon: %@\nacc h:%@ v:%@\nalt: %@", latitude, longitude, hAcc, vAcc, altitude];
+    mainLabel.text = details;
+    NSLog(@"%@", details);
+    
     self.lastLocation = newLocation;
   }
 }

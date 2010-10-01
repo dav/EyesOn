@@ -14,6 +14,8 @@
 
 @interface TargetDetailViewController : UIViewController <CLLocationManagerDelegate, OverlayViewControllerDelegate> {
   IBOutlet UIButton* cameraButton;
+  IBOutlet UIImageView* mainImageView;
+  IBOutlet UILabel* mainLabel;
   
   Target* _target;
   OverlayViewController* _overlayViewController;
