@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "OverlayViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 @class Target;
 
-@interface TargetDetailViewController : UIViewController <OverlayViewControllerDelegate> {
+@interface TargetDetailViewController : UIViewController <CLLocationManagerDelegate, OverlayViewControllerDelegate> {
   IBOutlet UIButton* cameraButton;
   
   Target* _target;
   OverlayViewController* _overlayViewController;
+  CLLocationManager* _locationManager;
 }
 
 @property (nonatomic, retain) Target* target;

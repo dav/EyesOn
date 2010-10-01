@@ -25,6 +25,7 @@
 		57A69D57125556F000247BD8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A69D56125556F000247BD8 /* CoreGraphics.framework */; };
 		57A69DB01255599E00247BD8 /* tick.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 57A69DAF1255599E00247BD8 /* tick.aiff */; };
 		57A69E0012555EA400247BD8 /* OverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A69DFF12555EA400247BD8 /* OverlayViewController.xib */; };
+		57C00D741255B71400342817 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C00D731255B71400342817 /* CoreLocation.framework */; };
 		57D1255F1254D7C600273827 /* EyesOnAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1255E1254D7C600273827 /* EyesOnAppDelegate.m */; };
 		57D125851254D90F00273827 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D125811254D90F00273827 /* MainWindow.xib */; };
 		57D125901254D9AE00273827 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1258F1254D9AE00273827 /* main.m */; };
@@ -81,6 +82,7 @@
 		57A69D56125556F000247BD8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		57A69DAF1255599E00247BD8 /* tick.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = tick.aiff; sourceTree = "<group>"; };
 		57A69DFF12555EA400247BD8 /* OverlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayViewController.xib; sourceTree = "<group>"; };
+		57C00D731255B71400342817 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
 		57D124F61254D3D400273827 /* EyesOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyesOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D124F81254D3D400273827 /* EyesOn-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EyesOn-Info.plist"; sourceTree = "<group>"; };
 		57D1255D1254D7C600273827 /* EyesOnAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EyesOnAppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			files = (
 				57A69D55125556F000247BD8 /* AudioToolbox.framework in Frameworks */,
 				57A69D57125556F000247BD8 /* CoreGraphics.framework in Frameworks */,
+				57C00D741255B71400342817 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +244,7 @@
 			children = (
 				57A69D54125556F000247BD8 /* AudioToolbox.framework */,
 				57A69D56125556F000247BD8 /* CoreGraphics.framework */,
+				57C00D731255B71400342817 /* CoreLocation.framework */,
 				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
 				AE2667B111EFC2B000EE18BD /* OCMock-iPhone.framework */,
 				AE42778911EF8FD600CFF331 /* Cedar.framework */,

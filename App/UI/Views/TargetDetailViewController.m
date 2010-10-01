@@ -19,6 +19,7 @@
   [super viewDidLoad];
   if (self.target) self.title = self.target.name;
   [cameraButton setTitle:@"Take a photo" forState:UIControlStateNormal];
+  _locationManager = nil;
   
   self.overlayViewController = [[[OverlayViewController alloc] initWithNibName:@"OverlayViewController" bundle:nil] autorelease];
   self.overlayViewController.delegate = self;
@@ -37,6 +38,7 @@
 
 - (void)dealloc {
   [_overlayViewController release];
+  [_locationManager release];
   [super dealloc];
 }
 
@@ -44,8 +46,10 @@
 
 - (IBAction) cameraButtonTapped:(id)sender {
   NSLog(@"tapped");
-  [self.overlayViewController setupImagePicker];
-  [self presentModalViewController:self.overlayViewController.imagePickerController animated:YES];
+  if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+    [self.overlayViewController setupImagePicker];
+    [self presentModalViewController:self.overlayViewController.imagePickerController animated:YES];
+  }
 }
 
 #pragma mark -
@@ -53,11 +57,41 @@
 
 - (void)didTakePicture:(UIImage *)picture {
   NSLog(@"picture; %@", picture);
+  
+  if (_locationManager == nil) {
+    _locationManager = [[[CLLocationManager alloc] init] retain];
+    if ([CLLocationManager locationServicesEnabled] == NO) {
+      UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled" message:@"You currently have all location services for this device disabled. If you proceed, you will be asked to confirm whether location services should be reenabled." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+      [servicesDisabledAlert show];
+      [servicesDisabledAlert release];
+    }
+  }
+	_locationManager.delegate = self;
+	_locationManager.distanceFilter = 1;
+	_locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+  NSLog(@"Getting location...");
+	[_locationManager startUpdatingLocation];
+  [self didFinishWithCamera];
 }
 
 - (void)didFinishWithCamera {
   [self dismissModalViewControllerAnimated:YES];
 }
 
+#pragma mark -
+#pragma mark CLLocationManagerDelegate
+
+- (void) locationManager:(CLLocationManager*)manager didUpdateToLocation:(CLLocation*)newLocation fromLocation:(CLLocation*)oldLocation {
+	[_locationManager stopUpdatingLocation];
+	NSLog(@"%@", [newLocation description]);
+  
+	NSString *latitude = [NSString stringWithFormat:@"%3.5f", newLocation.coordinate.latitude];
+	NSString *longitude = [NSString stringWithFormat:@"%3.5f", newLocation.coordinate.longitude];
+	NSLog(@"lat: %@, lon: %@ (acrcy %@)", latitude, longitude, newLocation.horizontalAccuracy);
+}
+
+- (void) locationManager:(CLLocationManager*)manager didFailWithError:(NSError*)error {
+  NSLog(@"Location Error: %@", [error localizedDescription]);
+}
 
 @end
