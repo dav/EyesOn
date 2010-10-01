@@ -14,6 +14,7 @@
 
 @synthesize target = _target;
 @synthesize overlayViewController = _overlayViewController;
+@synthesize lastLocation = _lastLocation;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -82,12 +83,17 @@
 #pragma mark CLLocationManagerDelegate
 
 - (void) locationManager:(CLLocationManager*)manager didUpdateToLocation:(CLLocation*)newLocation fromLocation:(CLLocation*)oldLocation {
-	[_locationManager stopUpdatingLocation];
-	NSLog(@"%@", [newLocation description]);
-  
-	NSString *latitude = [NSString stringWithFormat:@"%3.5f", newLocation.coordinate.latitude];
-	NSString *longitude = [NSString stringWithFormat:@"%3.5f", newLocation.coordinate.longitude];
-	NSLog(@"lat: %@, lon: %@ (acrcy %@)", latitude, longitude, newLocation.horizontalAccuracy);
+  if (!self.lastLocation || [newLocation.timestamp compare:self.lastLocation.timestamp]==NSOrderedDescending) {
+    [_locationManager stopUpdatingLocation];
+    NSLog(@"%@", [newLocation description]);
+    NSString* latitude = [NSString stringWithFormat:@"%3.5f", newLocation.coordinate.latitude];
+    NSString* longitude = [NSString stringWithFormat:@"%3.5f", newLocation.coordinate.longitude];
+    NSNumber* hAcc = [NSNumber numberWithDouble:newLocation.horizontalAccuracy];
+    NSNumber* vAcc = [NSNumber numberWithDouble:newLocation.verticalAccuracy];
+    NSNumber* altitude = [NSNumber numberWithDouble:newLocation.altitude];
+    NSLog(@"lat: %@, lon: %@ (acrcy h:%@ v:%@; altitude: %@)", latitude, longitude, hAcc, vAcc, altitude);
+    self.lastLocation = newLocation;
+  }
 }
 
 - (void) locationManager:(CLLocationManager*)manager didFailWithError:(NSError*)error {

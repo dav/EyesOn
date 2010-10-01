@@ -18,10 +18,12 @@
   Target* _target;
   OverlayViewController* _overlayViewController;
   CLLocationManager* _locationManager;
+  CLLocation* _lastLocation;
 }
 
 @property (nonatomic, retain) Target* target;
 @property (nonatomic, retain) OverlayViewController* overlayViewController;
+@property (nonatomic, retain) CLLocation* lastLocation;
 
 - (IBAction) cameraButtonTapped:(id)sender;
 
