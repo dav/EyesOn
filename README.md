@@ -8,6 +8,8 @@ In practical terms, this means you take photos of something, say Sutro Tower in 
 
 Then, from either a web site or within the app, you can browse everyone's photos in a geospatial manner. That is, you can zoom in and out and pan left and right, always encircling Sutro Tower. It will be a neat effect!
 
+It's something like [Photosynth](http://photosynth.net/about.aspx) except all photosynth image collections I've seen are from one spot looking 360 degrees around. This is about stitching together images from 360 degrees around, all focusing on one spot. I still need to look into Photosynth to see if it can be used to do what I want, but I have high hopes (Thanks @anselm for pointing it out to me).
+
 ## HIGH LEVEL ROADMAP
 
 - Make an app that takes a photo and uploads to the server
