@@ -14,8 +14,6 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		5771ABEE1257FCB40009B33F /* EyesOn_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5771ABED1257FCB40009B33F /* EyesOn_Icon.png */; };
 		5771ACA41258241F0009B33F /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5771ACA31258241F0009B33F /* Photo.m */; };
-		57FAD5521257AD5A00773631 /* 13-target.png in Resources */ = {isa = PBXBuildFile; fileRef = 57FAD5501257AD5A00773631 /* 13-target.png */; };
-		57FAD5531257AD5A00773631 /* 44-shoebox.png in Resources */ = {isa = PBXBuildFile; fileRef = 57FAD5511257AD5A00773631 /* 44-shoebox.png */; };
 		57FAD5A11257ADE300773631 /* libThree20Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57FAD5801257ADDA00773631 /* libThree20Core.a */; };
 		57FAD5A21257ADE300773631 /* libThree20Network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57FAD5861257ADDA00773631 /* libThree20Network.a */; };
 		57FAD5A31257ADE400773631 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57FAD59E1257ADDA00773631 /* libThree20UI.a */; };
@@ -205,8 +203,6 @@
 		5771ABED1257FCB40009B33F /* EyesOn_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EyesOn_Icon.png; sourceTree = "<group>"; };
 		5771ACA21258241F0009B33F /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		5771ACA31258241F0009B33F /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
-		57FAD5501257AD5A00773631 /* 13-target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13-target.png"; sourceTree = "<group>"; };
-		57FAD5511257AD5A00773631 /* 44-shoebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "44-shoebox.png"; sourceTree = "<group>"; };
 		57FAD5611257ADAD00773631 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		57FAD56B1257ADDA00773631 /* Three20Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Core.xcodeproj; path = ../three20/src/Three20Core/Three20Core.xcodeproj; sourceTree = SOURCE_ROOT; };
 		57FAD56E1257ADDA00773631 /* Three20Network.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Network.xcodeproj; path = ../three20/src/Three20Network/Three20Network.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -339,8 +335,6 @@
 			children = (
 				5771ABED1257FCB40009B33F /* EyesOn_Icon.png */,
 				57FAD7571257C2AD00773631 /* SutroWide.png */,
-				57FAD5501257AD5A00773631 /* 13-target.png */,
-				57FAD5511257AD5A00773631 /* 44-shoebox.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -664,8 +658,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57FAD5521257AD5A00773631 /* 13-target.png in Resources */,
-				57FAD5531257AD5A00773631 /* 44-shoebox.png in Resources */,
 				57FAD5BF1257AE8F00773631 /* Three20.bundle in Resources */,
 				57FAD73B1257BF1800773631 /* StartUpController.xib in Resources */,
 				57FAD7581257C2AD00773631 /* SutroWide.png in Resources */,

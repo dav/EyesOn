@@ -23,12 +23,6 @@
   return self;
 }
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  BOOL ui = self.view.userInteractionEnabled;
-  NSLog(@"userInteractionEnabled = %d", ui);
-}
-
 #pragma mark TTModelViewController
 
 - (void)createModel {
