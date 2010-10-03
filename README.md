@@ -23,4 +23,4 @@ See the [Eyes On Pivotal Tracker Project](http://www.pivotaltracker.com/projects
 
 ## Building
 
-The (Three20)[http://github.com/facebook/three20] project should be cloned as a sibling directory, i.e. (${SRC_ROOT}../three20/Three20.xcodeproj/
+The [Three20](http://github.com/facebook/three20) project should be cloned as a sibling directory, i.e. (${SRC_ROOT}../three20/Three20.xcodeproj/
