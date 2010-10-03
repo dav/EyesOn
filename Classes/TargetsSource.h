@@ -1,5 +1,5 @@
 //
-//  EOTabBarController.h
+//  Target.h
 //  EyesOn
 //
 //  Created by dav on 9/30/10.
@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class TargetsViewController;
+@class TargetsModel;
 
-@interface EOTabBarController : UITabBarController {
-  TargetsViewController* targetsController;
+@interface TargetsSource : TTListDataSource {
+  TargetsModel* _targetsModel;  
 }
 
 @end

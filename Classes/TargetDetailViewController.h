@@ -19,7 +19,6 @@
   
   Target* _target;
   OverlayViewController* _overlayViewController;
-  CLLocationManager* _locationManager;
   CLLocation* _lastLocation;
 }
 
@@ -27,6 +26,7 @@
 @property (nonatomic, retain) OverlayViewController* overlayViewController;
 @property (nonatomic, retain) CLLocation* lastLocation;
 
+- (id) initWithSlug:(NSString*)slug;
 - (IBAction) cameraButtonTapped:(id)sender;
 
 @end

@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'EyesOn' target in the 'EyesOn' project.
-//
-
-#ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-#endif

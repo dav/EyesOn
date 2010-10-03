@@ -1,0 +1,11 @@
+//
+// Prefix header for all source files of the 'EyesOn' target in the 'EyesOn' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+    #import <Three20/Three20+Additions.h>
+#endif
+
+#define AppDelegate (EyesOnAppDelegate*)([[UIApplication sharedApplication] delegate]) 

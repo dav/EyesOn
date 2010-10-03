@@ -7,24 +7,44 @@
 //
 
 #import "EyesOnAppDelegate.h"
+#import "StartUpController.h"
+#import "EOLocationProvider.h"
 
-#import "EOTabBarController.h"
+#import "PhotoController.h"
+#import "TargetsController.h"
+#import "TargetDetailViewController.h"
+
+#import "Target.h"
+
+@interface EyesOnAppDelegate ()
+- (void) loadNavigator;
+@end
 
 @implementation EyesOnAppDelegate
 
 @synthesize window;
-@synthesize tabBarController;
-
 
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions { 
   
-  tabBarController = [[EOTabBarController alloc] init];
-  [window addSubview:tabBarController.view];
+  [EOLocationProvider sharedInstance]; // Init the location provider
+  
+  [self loadNavigator];
+
+  /*
+  window = [[UIWindow alloc] init];
+	StartUpController* startUpController = [[StartUpController alloc] initWithNibName:@"StartUpController" bundle:[NSBundle mainBundle]];
+	[window addSubview:startUpController.view];
+  [startUpController release];
   [window makeKeyAndVisible];
-  
+   */
+  return YES;
+}
+
+- (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)URL {
+  [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:URL.absoluteString]];
   return YES;
 }
 
@@ -94,9 +114,46 @@
 
 
 - (void)dealloc {
-  [tabBarController release];
   [window release];
   [super dealloc];
+}
+
+- (void) loadNavigator {
+  TTNavigator* navigator = [TTNavigator navigator];
+  navigator.supportsShakeToReload = YES;
+  navigator.persistenceMode = TTNavigatorPersistenceModeAll;
+  
+  TTURLMap* map = navigator.URLMap;
+  [map from:@"*" toViewController:[TTWebController class]];
+  [map from:@"tt://photoTest1" toViewController:[PhotoController class]];
+  
+  [map from:[Target class] name:@"view" toURL:@"tt://targets/view/(slug)"];
+  [map from:@"tt://targets" toViewController:[TargetsController class]];
+  [map from:@"tt://targets/view/(initWithSlug:)" toViewController:[TargetDetailViewController class]];
+  
+  if (![navigator restoreViewControllers]) {
+    [navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://targets"]];
+  }
+}
+
+#pragma mark StartUpController
+
+- (void) doStartUp:(StartUpController*)startUpController {
+//  [self performSelectorInBackground:@selector(registerWithServer) withObject:nil];
+  
+  
+  [startUpController performSelectorOnMainThread:@selector(setText:) withObject:@"Validating database..." waitUntilDone:YES];
+  
+  [self performSelectorOnMainThread:@selector(mainThreadStartUpTasks:) withObject:startUpController waitUntilDone:YES];
+}
+
+- (void) mainThreadStartUpTasks:(StartUpController*)startUpController {
+  NSLog(@"=== BEGIN mainThreadStartUpTasks ===");
+  [startUpController.view removeFromSuperview];
+  
+  [NSThread sleepForTimeInterval:1.0];
+
+  [self loadNavigator];
 }
 
 @end
