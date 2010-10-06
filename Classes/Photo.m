@@ -11,13 +11,14 @@
 @implementation Photo
 
 @synthesize photoSource = _photoSource, size = _size, index = _index, location = _location, caption = _caption;
+@synthesize smallURL = _smallURL;
 
 - (id)initWithURL:(NSString*)URL smallURL:(NSString*)smallURL size:(CGSize)size {
-  return [self initWithURL:URL smallURL:smallURL size:size location:nil];
+  return [self initWithURL:URL smallURL:smallURL size:size caption:nil location:nil];
 }
 
-- (id)initWithURL:(NSString*)URL smallURL:(NSString*)smallURL size:(CGSize)size location:(CLLocation*)location {
-  if (self = [super init]) {
+- (id)initWithURL:(NSString*)URL smallURL:(NSString*)smallURL size:(CGSize)size caption:(NSString*)caption location:(CLLocation*)location {
+  if ((self=[super init])) {
     _photoSource = nil;
     _URL = [URL copy];
     _smallURL = [smallURL copy];
@@ -25,20 +26,7 @@
     _size = size;
     _location = [location copy];
     _index = NSIntegerMax;
-    _caption = nil;
-  }
-  return self;
-}
-
-- (id)initWithURL:(NSString*)URL smallURL:(NSString*)smallURL size:(CGSize)size caption:(NSString*)caption {
-  if (self = [super init]) {
-    _photoSource = nil;
-    _URL = [URL copy];
-    _smallURL = [smallURL copy];
-    _thumbURL = [smallURL copy];
-    _size = size;
     _caption = [caption copy];
-    _index = NSIntegerMax;
   }
   return self;
 }
@@ -52,7 +40,7 @@
 }
 
 - (NSString*) description {
-  return [NSString stringWithFormat:@"Photo:\n-URL: %@", _URL];
+  return [NSString stringWithFormat:@"<<Photo: %d x %d URL: %@, Small URL: %@>>", (int)_size.width, (int)_size.height, _URL, _smallURL];
 }
 
 #pragma mark TTPhoto
@@ -65,7 +53,7 @@
   } else if (version == TTPhotoVersionSmall) {
     return _smallURL;
   } else if (version == TTPhotoVersionThumbnail) {
-    return _thumbURL;
+    return _smallURL;
   } else {
     return nil;
   }

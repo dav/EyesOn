@@ -16,7 +16,7 @@
 @synthesize photos = _photos;
 
 - (id) init {
-  if (self=[super init]) {
+  if ((self=[super init])) {
     self.name = nil;
     self.latitude = nil;
     self.longitude = nil;
@@ -26,7 +26,7 @@
 }
 
 - (id)initWithName:(NSString*)name latitude:(NSNumber*)lat longitude:(NSNumber*)lon {
-  if (self=[super init]) {
+  if ((self=[super init])) {
     self.name = name;
     self.latitude = lat;
     self.longitude = lon;
@@ -39,12 +39,20 @@
     NSDirectoryEnumerator *dirEnum = [localFileManager enumeratorAtPath:documentsDirectory];
     
     NSString *file;
-    while (file = [dirEnum nextObject]) {
+    Photo* photo = nil;
+    while ((file = [dirEnum nextObject])) {
       if ([file hasPrefix:self.name]) {
-        NSString* fileURL = [NSString stringWithFormat:@"file://%@/%@", documentsDirectory, file];
-        Photo* photo = [[Photo alloc] initWithURL:fileURL smallURL:fileURL size:CGSizeZero];
-        NSLog(@"Adding Found Photo: %@", photo);
-        [((NSMutableArray*)self.photos) addObject:photo];
+        NSRange range = [file rangeOfString:@"-thumb"];
+        if (range.location == NSNotFound) {
+          NSString* url = [NSString stringWithFormat:@"documents://%@", file];
+          [photo release];
+          photo = [[Photo alloc] initWithURL:url smallURL:nil size:CGSizeMake(320, 480)];
+        } else {
+          NSString* smallURL = [NSString stringWithFormat:@"documents://%@", file];
+          photo.smallURL = smallURL;
+          NSLog(@"Target: %@; Adding Local Photo: %@", name, photo);
+          [((NSMutableArray*)self.photos) addObject:photo];
+        }
       }
     }
     [localFileManager release];  }

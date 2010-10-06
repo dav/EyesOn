@@ -13,7 +13,7 @@
 @implementation TargetsSource
 
 - (id)init {
-  if (self = [super init]) {
+  if ((self = [super init])) {
     _targetsModel = [TargetsModel sharedInstance];
   }
   
@@ -33,7 +33,7 @@
   NSMutableArray* items = [[NSMutableArray alloc] init];
   
   for (Target* target in _targetsModel.targets) {
-    NSString* subtitle = [NSString stringWithFormat:@"Stuff re: %@", target.name];
+    NSString* subtitle = [NSString stringWithFormat:@"%d photos", [target.photos count]];
     NSString* url = [target URLValueWithName:@"view"];
     [items addObject:[TTTableSubtitleItem itemWithText:target.name subtitle:subtitle imageURL:nil URL:url]];
   }

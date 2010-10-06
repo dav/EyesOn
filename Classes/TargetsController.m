@@ -15,10 +15,9 @@
 #pragma mark UIViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-  if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+  if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
     self.title = @"Targets";
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Targets" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
-//    self.tableViewStyle = UITableViewStyleGrouped;
   }
   return self;
 }

@@ -13,36 +13,51 @@
 #import "EOLocationProvider.h"
 #import "Photo.h"
 
-@interface  TargetDetailViewController (PrivateMethods) 
-- (void) displayPhoto:(Photo*)photo;
+@interface  TargetDetailViewController () 
+- (IBAction) cameraButtonTapped:(id)sender;
 @end
 
 @implementation TargetDetailViewController
 
 @synthesize target = _target;
 @synthesize overlayViewController = _overlayViewController;
-@synthesize lastLocation = _lastLocation;
 
 - (id) initWithSlug:(NSString*)slug {
-  if (self = [super init]) {
+  if ((self=[super init])) {
     Target* target = [[TargetsModel sharedInstance] targetForSlug:slug];
     self.target = target;
+    self.title = self.target.name;
+    self.tableViewStyle = UITableViewStyleGrouped;
   }
   return self;
 }
 
+#pragma mark TTModelViewController
+
+- (void) createModel {
+  NSArray* sectionArray = [[NSArray alloc] initWithObjects:@"Photos", nil];
+  NSMutableArray* photosSectionArray = [[NSMutableArray alloc] init];
+  
+  [photosSectionArray addObject:[TTTableButton itemWithText:@"Take new photo" delegate:self selector:@selector(cameraButtonTapped:)]];
+  if ([self.target.photos count]>0) {
+    Photo* photo = [self.target.photos lastObject];
+    
+    NSString* labelText = [NSString stringWithFormat:@"%d Photos", [self.target.photos count]];
+    NSString* imageURL = [photo URLForVersion:TTPhotoVersionThumbnail];
+    NSString* viewURL = [self.target URLValueWithName:@"photosView"];
+    NSLog(@"Most Recent Image URL: %@", imageURL);
+    TTTableImageItem* imageItem = [TTTableImageItem itemWithText:labelText imageURL:imageURL URL:viewURL];
+    [photosSectionArray addObject:imageItem];
+  }
+    
+  NSArray* itemsArray = [[NSArray alloc] initWithObjects:photosSectionArray, nil];
+  
+  self.dataSource = [TTSectionedDataSource dataSourceWithItems:itemsArray sections:sectionArray];
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
-  if (self.target) self.title = self.target.name;
-  if (self.target.photos) {
-    Photo* photo = [self.target.photos lastObject];
-    if (photo) {
-      [self displayPhoto:photo];
-    }
-  }
-  [cameraButton setTitle:@"Take a photo" forState:UIControlStateNormal];
-  
-  self.overlayViewController = [[[OverlayViewController alloc] initWithNibName:@"OverlayViewController" bundle:nil] autorelease];
+  self.overlayViewController = [[OverlayViewController alloc] initWithNibName:@"OverlayViewController" bundle:nil];
   self.overlayViewController.delegate = self;
 }
 
@@ -64,24 +79,6 @@
 
 #pragma mark -
 
-- (void) displayPhoto:(Photo*)photo {
-  NSString* urlString = [photo URLForVersion:TTPhotoVersionLarge];
-  NSLog(@"Displaying Photo from %@", urlString);
-  NSData* imageData = nil;
-  if ([urlString hasPrefix:@"file://"]) {
-    imageData = [NSData dataWithContentsOfFile:[urlString substringFromIndex:7]];
-  } else {
-    NSURL* url = [NSURL URLWithString:urlString];
-    NSError* error = nil;
-    imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingMapped error:&error];
-    if (error) {
-      NSLog(@"ERROR: %@", [error localizedDescription]);
-    }
-  }
-  UIImage* image =[UIImage imageWithData:imageData];
-  mainImageView.image = image;
-}
-
 - (IBAction) cameraButtonTapped:(id)sender {
   NSLog(@"tapped");
   if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -93,25 +90,39 @@
 #pragma mark -
 #pragma mark OverlayViewControllerDelegate
 
-- (void)didTakePicture:(UIImage *)picture {
-  NSLog(@"picture; %@", picture);
-  NSLog(@"Picture location = %@", [EOLocationProvider sharedInstance].lastLocation);
-  
-  NSData *imageData = UIImageJPEGRepresentation(picture, 1.0);
+- (NSString*) saveNameForImage:(UIImage*)image named:(NSString*)name {
+  NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
-	
+  NSString* filename = [NSString stringWithFormat:@"%@-%@.jpg", name, [NSDate date]];
+  NSString* path = [NSString stringWithFormat:@"%@/%@", documentsDirectory, filename];
+  NSLog(@"file path: %@", path);
+  if([imageData writeToFile:path atomically:YES]) {
+    return filename;
+  }
+  return nil;
+}
+
+- (void) didTakePicture:(UIImage*)picture {
+  NSLog(@"picture: %dx%d %@", (int)picture.size.width, (int)picture.size.height, picture);
+  NSLog(@"Picture location = %@", [EOLocationProvider sharedInstance].lastLocation);
   
-  NSString *tmpPathToFile = [[NSString alloc] initWithString:[NSString stringWithFormat:@"%@/%@-%@.jpg", documentsDirectory, self.target.name, [NSDate date]]];
-  NSLog(@"file path: %@", tmpPathToFile);
-  
-  if([imageData writeToFile:tmpPathToFile atomically:YES]) {
-    NSString* fileURL = [NSString stringWithFormat:@"file://%@", tmpPathToFile];
-    Photo* photo = [[Photo alloc] initWithURL:fileURL smallURL:fileURL size:picture.size];
-    NSLog(@"Photo: %@", photo);
-    [self.target addPhoto:photo];
-    [self displayPhoto:photo];
-  }  
+  BOOL needsRotation = (picture.size.width > picture.size.height);
+  UIImage* fullImage = [picture transformWidth:320 height:480 rotate:needsRotation];
+  NSString* filename = [self saveNameForImage:fullImage named:self.target.name];
+  if (filename) {
+    UIImage* thumbnailImage = [picture transformWidth:50 height:50 rotate:needsRotation];
+    NSString* thumbnailName = [NSString stringWithFormat:@"%@-thumb", self.target.name];
+    NSString* thumbnailFilename = [self saveNameForImage:thumbnailImage named:thumbnailName];
+    if (thumbnailFilename) {
+      NSString* fileURL = [NSString stringWithFormat:@"documents://%@", filename];
+      NSString* thumbnailURL = [NSString stringWithFormat:@"documents://%@", thumbnailFilename];
+      Photo* photo = [[Photo alloc] initWithURL:fileURL smallURL:thumbnailURL size:fullImage.size];
+      NSLog(@"Photo: %@", photo);
+      [self.target addPhoto:photo];
+    }
+  }
+
   [self didFinishWithCamera];
 }
 

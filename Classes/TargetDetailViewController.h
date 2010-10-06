@@ -6,27 +6,19 @@
 //  Copyright 2010 Lumos Labs, Inc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Three20/Three20.h>
 #import "OverlayViewController.h"
-#import <CoreLocation/CoreLocation.h>
 
 @class Target;
 
-@interface TargetDetailViewController : UIViewController <CLLocationManagerDelegate, OverlayViewControllerDelegate> {
-  IBOutlet UIButton* cameraButton;
-  IBOutlet UIImageView* mainImageView;
-  IBOutlet UILabel* mainLabel;
-  
+@interface TargetDetailViewController : TTTableViewController <OverlayViewControllerDelegate> {
   Target* _target;
   OverlayViewController* _overlayViewController;
-  CLLocation* _lastLocation;
 }
 
 @property (nonatomic, retain) Target* target;
 @property (nonatomic, retain) OverlayViewController* overlayViewController;
-@property (nonatomic, retain) CLLocation* lastLocation;
 
 - (id) initWithSlug:(NSString*)slug;
-- (IBAction) cameraButtonTapped:(id)sender;
 
 @end

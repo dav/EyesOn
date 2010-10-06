@@ -39,10 +39,10 @@
   self.imagePickerController.showsCameraControls = YES;
   if (NO && self.imagePickerController.cameraOverlayView != self.view) {
     CGRect overlayViewFrame = self.imagePickerController.cameraOverlayView.frame;
-    CGRect newFrame = CGRectMake(0.0, 
-                                 CGRectGetHeight(overlayViewFrame) - self.view.frame.size.height - 9.0,
+    CGRect newFrame = CGRectMake(0.0f, 
+                                 CGRectGetHeight(overlayViewFrame) - self.view.frame.size.height - 9.0f,
                                  CGRectGetWidth(overlayViewFrame),
-                                 self.view.frame.size.height + 9.0);
+                                 self.view.frame.size.height + 9.0f);
     self.view.frame = newFrame;
     self.imagePickerController.cameraOverlayView = self.view;
   }

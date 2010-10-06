@@ -15,9 +15,11 @@
 #import "TargetDetailViewController.h"
 
 #import "Target.h"
+#import "Photo.h"
 
 @interface EyesOnAppDelegate ()
 - (void) loadNavigator;
+- (void) mainThreadStartUpTasks:(StartUpController*)startUpController;
 @end
 
 @implementation EyesOnAppDelegate
@@ -125,22 +127,24 @@
   
   TTURLMap* map = navigator.URLMap;
   [map from:@"*" toViewController:[TTWebController class]];
-  [map from:@"tt://photoTest1" toViewController:[PhotoController class]];
+  [map from:@"tt://mockphotos/view/(initWithMocks:)" toViewController:[PhotoController class]];
   
   [map from:[Target class] name:@"view" toURL:@"tt://targets/view/(slug)"];
   [map from:@"tt://targets" toViewController:[TargetsController class]];
   [map from:@"tt://targets/view/(initWithSlug:)" toViewController:[TargetDetailViewController class]];
-  
-  if (![navigator restoreViewControllers]) {
+
+  [map from:[Target class] name:@"photosView" toURL:@"tt://photos/view/(slug)"];
+  [map from:@"tt://photos/view/(initWithTargetSlug:)" toViewController:[PhotoController class]];
+
+//  if (![navigator restoreViewControllers]) {
     [navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://targets"]];
-  }
+//  }
 }
 
 #pragma mark StartUpController
 
 - (void) doStartUp:(StartUpController*)startUpController {
 //  [self performSelectorInBackground:@selector(registerWithServer) withObject:nil];
-  
   
   [startUpController performSelectorOnMainThread:@selector(setText:) withObject:@"Validating database..." waitUntilDone:YES];
   

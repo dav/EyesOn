@@ -34,7 +34,6 @@
 		57FAD88B1257E46A00773631 /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FAD88A1257E3FE00773631 /* Target.m */; };
 		57FAD8901257E52100773631 /* TargetsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FAD88F1257E52100773631 /* TargetsModel.m */; };
 		57FAD8F91257EDE100773631 /* TargetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FAD8F71257EDE100773631 /* TargetDetailViewController.m */; };
-		57FAD8FA1257EDE100773631 /* TargetDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57FAD8F81257EDE100773631 /* TargetDetailViewController.xib */; };
 		57FAD9001257EE1300773631 /* OverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FAD8FE1257EE1300773631 /* OverlayViewController.m */; };
 		57FAD9011257EE1300773631 /* OverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57FAD8FF1257EE1300773631 /* OverlayViewController.xib */; };
 		57FAD9071257EE4900773631 /* tick.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 57FAD9061257EE4900773631 /* tick.aiff */; };
@@ -233,7 +232,6 @@
 		57FAD88F1257E52100773631 /* TargetsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetsModel.m; sourceTree = "<group>"; };
 		57FAD8F61257EDE100773631 /* TargetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetDetailViewController.h; sourceTree = "<group>"; };
 		57FAD8F71257EDE100773631 /* TargetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetDetailViewController.m; sourceTree = "<group>"; };
-		57FAD8F81257EDE100773631 /* TargetDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TargetDetailViewController.xib; sourceTree = "<group>"; };
 		57FAD8FD1257EE1300773631 /* OverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayViewController.h; sourceTree = "<group>"; };
 		57FAD8FE1257EE1300773631 /* OverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayViewController.m; sourceTree = "<group>"; };
 		57FAD8FF1257EE1300773631 /* OverlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayViewController.xib; sourceTree = "<group>"; };
@@ -429,7 +427,6 @@
 				57FAD8FF1257EE1300773631 /* OverlayViewController.xib */,
 				57FAD8F61257EDE100773631 /* TargetDetailViewController.h */,
 				57FAD8F71257EDE100773631 /* TargetDetailViewController.m */,
-				57FAD8F81257EDE100773631 /* TargetDetailViewController.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -661,7 +658,6 @@
 				57FAD5BF1257AE8F00773631 /* Three20.bundle in Resources */,
 				57FAD73B1257BF1800773631 /* StartUpController.xib in Resources */,
 				57FAD7581257C2AD00773631 /* SutroWide.png in Resources */,
-				57FAD8FA1257EDE100773631 /* TargetDetailViewController.xib in Resources */,
 				57FAD9011257EE1300773631 /* OverlayViewController.xib in Resources */,
 				57FAD9071257EE4900773631 /* tick.aiff in Resources */,
 				5771ABEE1257FCB40009B33F /* EyesOn_Icon.png in Resources */,
@@ -766,7 +762,31 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = NO;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_PROTOTYPE_CONVERSION = NO;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "${SRCROOT}/../three20/Build/Products/three20";
 				OTHER_LDFLAGS = (

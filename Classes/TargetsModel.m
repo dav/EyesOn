@@ -29,9 +29,9 @@ static TargetsModel* sharedInstance = nil;
 @synthesize targets = _targets;
 
 - (id) init {
-  if (self = [super init]) {
-    Target* sutroTower = [[Target alloc] initWithName:@"Sutro Tower" latitude:[NSNumber numberWithFloat:37.755278] longitude:[NSNumber numberWithFloat:122.45277]];
-    Target* eiffelTower = [[Target alloc] initWithName:@"Eiffel Tower" latitude:[NSNumber numberWithFloat:48.8577] longitude:[NSNumber numberWithFloat:002.295]];
+  if ((self=[super init])) {
+    Target* sutroTower = [[Target alloc] initWithName:@"Sutro Tower" latitude:[NSNumber numberWithFloat:37.755278f] longitude:[NSNumber numberWithFloat:122.45277f]];
+    Target* eiffelTower = [[Target alloc] initWithName:@"Eiffel Tower" latitude:[NSNumber numberWithFloat:48.8577f] longitude:[NSNumber numberWithFloat:002.295f]];
     self.targets = [[NSArray alloc] initWithObjects:sutroTower, eiffelTower, nil];
     [sutroTower release];
     [eiffelTower release];
