@@ -43,7 +43,8 @@
     while ((file = [dirEnum nextObject])) {
       if ([file hasPrefix:self.name]) {
         NSRange range = [file rangeOfString:@"-thumb"];
-        if (range.location == NSNotFound) {
+        BOOL isNotThumbnail = (range.location == NSNotFound);
+        if (isNotThumbnail) {
           NSString* url = [NSString stringWithFormat:@"documents://%@", file];
           [photo release];
           photo = [[Photo alloc] initWithURL:url smallURL:nil size:CGSizeMake(320, 480)];
