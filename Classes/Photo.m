@@ -40,7 +40,7 @@
 }
 
 - (NSString*) description {
-  return [NSString stringWithFormat:@"<<Photo: %d x %d URL: %@, Small URL: %@>>", (int)_size.width, (int)_size.height, _URL, _smallURL];
+  return [NSString stringWithFormat:@"<<Photo: %d x %d\n  URL: %@,\n  Small URL: %@\n  Caption: %@\n  Location: %@>>", (int)_size.width, (int)_size.height, _URL, _smallURL, _caption, _location];
 }
 
 #pragma mark TTPhoto

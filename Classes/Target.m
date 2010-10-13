@@ -32,31 +32,51 @@
     self.longitude = lon;
     self.photos = [[NSMutableArray alloc] init];
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    
-    NSFileManager *localFileManager=[[NSFileManager alloc] init];
-    NSDirectoryEnumerator *dirEnum = [localFileManager enumeratorAtPath:documentsDirectory];
-    
-    NSString *file;
-    Photo* photo = nil;
-    while ((file = [dirEnum nextObject])) {
-      if ([file hasPrefix:self.name]) {
-        NSRange range = [file rangeOfString:@"-thumb"];
-        BOOL isNotThumbnail = (range.location == NSNotFound);
-        if (isNotThumbnail) {
-          NSString* url = [NSString stringWithFormat:@"documents://%@", file];
-          [photo release];
-          photo = [[Photo alloc] initWithURL:url smallURL:nil size:CGSizeMake(320, 480)];
-        } else {
-          NSString* smallURL = [NSString stringWithFormat:@"documents://%@", file];
-          photo.smallURL = smallURL;
-          NSLog(@"Target: %@; Adding Local Photo: %@", name, photo);
-          [((NSMutableArray*)self.photos) addObject:photo];
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSArray* basenames = [defaults objectForKey:@"LocalPhotoSet"];
+    if (basenames == nil) {
+      NSLog(@"No stored photos in defaults");
+    } else {
+      for (NSString* basename in basenames) {
+        if ([basename hasPrefix:self.name]) {
+          NSString* fullImageFileName = [NSString stringWithFormat:@"%@.jpg", basename];
+          NSString* thumbnailImageFileName = [NSString stringWithFormat:@"%@-thumb.jpg", basename];
+          NSString* metadataFileName = [NSString stringWithFormat:@"%@.json", basename];
+          
+          NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+          NSString *documentsDirectory = [paths objectAtIndex:0];
+          NSFileManager *localFileManager=[[NSFileManager alloc] init];
+          
+          NSString* mainFilePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory, fullImageFileName];
+          NSString* metadataFilePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory, metadataFileName];
+          if (![localFileManager fileExistsAtPath:mainFilePath]) {
+            NSLog(@"Keyed file does not exist: %@", mainFilePath);
+          } else {
+            NSString* url = [NSString stringWithFormat:@"documents://%@", fullImageFileName];
+            NSString* smallUrl = [NSString stringWithFormat:@"documents://%@", thumbnailImageFileName];
+            NSString* json = [[NSString alloc] initWithContentsOfFile:metadataFilePath];
+            
+            CLLocation* location = nil;
+            SBJSON* jsonParser = [SBJSON new];
+            NSDictionary* metadata = [jsonParser objectWithString:json];
+            [jsonParser release];
+            if (metadata) {
+              NSNumber* latNum = [metadata objectForKey:@"latitude"];
+              NSNumber* lonNum = [metadata objectForKey:@"longitude"];
+              if (lat && lon) {
+                location = [[CLLocation alloc] initWithLatitude:[latNum doubleValue] longitude:[lonNum doubleValue]];
+              }
+            }
+            
+            Photo* photo = [[Photo alloc] initWithURL:url smallURL:smallUrl size:CGSizeMake(320, 480) caption:json location:location];
+            NSLog(@"Target: %@; Adding Local Photo: %@", self.name, photo);
+            [((NSMutableArray*)self.photos) addObject:photo];
+            [photo release];
+          }
         }
       }
     }
-    [localFileManager release];  }
+  }
   return self;
 }
 

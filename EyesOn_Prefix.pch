@@ -8,4 +8,7 @@
     #import <Three20/Three20+Additions.h>
 #endif
 
+#import "extThree20JSON/extThree20JSON.h"
+#import "extThree20JSON/SBJSON.h"
+
 #define AppDelegate (EyesOnAppDelegate*)([[UIApplication sharedApplication] delegate]) 
